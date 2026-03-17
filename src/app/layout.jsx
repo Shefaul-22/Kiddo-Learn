@@ -17,14 +17,14 @@ export const metadata = {
   metadataBase: new URL("https://hero-kidz.vercel.app"),
 
   title: {
-    default: "HeroKidz | Smart Learning Toys for Kids",
-    template: "%s | HeroKidz",
+    default: "KiddoLearn | Smart Learning Toys for Kids",
+    template: "%s | KiddoLearn",
   },
 
   description:
-    "HeroKidz brings safe, colorful, and educational toys that help children learn numbers, logic, and creativity through joyful play.",
+    "KiddoLearn brings safe, colorful, and educational toys that help children learn numbers, logic, and creativity through joyful play.",
 
-  applicationName: "HeroKidz",
+  applicationName: "KiddoLearn",
 
   keywords: [
     "learning toys",
@@ -37,9 +37,9 @@ export const metadata = {
     "kids educational board",
   ],
 
-  authors: [{ name: "HeroKidz Team" }],
-  creator: "HeroKidz",
-  publisher: "HeroKidz",
+  authors: [{ name: "KiddoLearn Team" }],
+  creator: "KiddoLearn",
+  publisher: "KiddoLearn",
 
   robots: {
     index: true,
@@ -61,9 +61,9 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.HeroKidz.com",
-    siteName: "HeroKidz",
-    title: "HeroKidz | Smart Learning Toys for Kids",
+    url: "https://www.KiddoLearn.com",
+    siteName: "KiddoLearn",
+    title: "KiddoLearn | Smart Learning Toys for Kids",
     description:
       "Discover colorful and safe learning toys designed to develop kids’ math skills, creativity, and confidence.",
     images: [
@@ -71,14 +71,14 @@ export const metadata = {
         url: "https://i.ibb.co.com/WN7WK6w5/image.png",
         width: 1200,
         height: 630,
-        alt: "HeroKidz Homepage Preview",
+        alt: "KiddoLearn Homepage Preview",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "HeroKidz | Smart Learning Toys for Kids",
+    title: "KiddoLearn | Smart Learning Toys for Kids",
     description:
       "Safe and educational toys to help children learn through play.",
     images: ["https://i.ibb.co.com/WN7WK6w5/image.png"],

@@ -8,6 +8,8 @@ import { FaCartPlus } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const CartButton = ({ product }) => {
+
+    
     const session = useSession();
     const path = usePathname();
     const router = useRouter();

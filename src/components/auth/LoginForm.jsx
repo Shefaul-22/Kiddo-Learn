@@ -36,7 +36,7 @@ const LoginForm = () => {
         "error"
       );
     } else {
-      Swal.fire("success", "Welcome to Kidz Hub", "success");
+      Swal.fire("success", "Welcome to Kiddo Learn", "success");
       router.push(callback);
     }
 
