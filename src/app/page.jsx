@@ -1,10 +1,23 @@
+import Banner from "@/components/home/Banner";
+import Products from "@/components/home/Products";
+import Test from "@/components/Test";
+import { authOptions } from "@/lib/authOptions";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-     
-     <button className="btn btn-primary">Test Button </button>
+    <div className="space-y-20">
+      {/* <Test></Test>
+      <p>{JSON.stringify(session)}</p> */}
+      <section>
+        <Banner></Banner>
+      </section>
+
+      <section>
+        <Products></Products>
+      </section>
     </div>
   );
 }
