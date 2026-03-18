@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import { AiOutlineLoading } from "react-icons/ai";
 
 export const RegisterForm = () => {
+
   const params = useSearchParams();
   const router = useRouter();
   const callbackUrl = params.get("callbackUrl") || "/";
@@ -52,6 +53,7 @@ export const RegisterForm = () => {
         router.push(callbackUrl);
       }
       setLoading(false);
+      
     } else {
       Swal.fire("error", "এই gmail এ  একটি একাউন্ট আছে । লগিন করুন ", "error");
       setLoading(false);

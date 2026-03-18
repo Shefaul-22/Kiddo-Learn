@@ -9,6 +9,7 @@ import { useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 
 const LoginForm = () => {
+
   const params = useSearchParams();
   const router = useRouter();
   const callback = params.get("callbackUrl") || "/";
@@ -25,7 +26,7 @@ const LoginForm = () => {
     const result = await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      // redirect: false,
       callbackUrl: params.get("callbackUrl") || "/",
     });
 
