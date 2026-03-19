@@ -45,7 +45,7 @@ export const RegisterForm = () => {
       const result = await signIn("credentials", {
         email: form.email,
         password: form.password,
-        redirect: false,
+        // redirect: false,
         callbackUrl: callbackUrl,
       });
       if (result.ok) {

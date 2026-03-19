@@ -11,7 +11,9 @@ const { dbConnect, collections } = require("@/lib/dbConnect");
 const cartCollection = dbConnect(collections.CART);
 
 export const handleCart = async (productId) => {
+
   const { user } = (await getServerSession(authOptions)) || {};
+  
   if (!user) return { success: false };
 
   //getCartItem->user.email && productId

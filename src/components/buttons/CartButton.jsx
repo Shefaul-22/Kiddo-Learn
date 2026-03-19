@@ -11,13 +11,18 @@ const CartButton = ({ product }) => {
 
     
     const session = useSession();
+
     const path = usePathname();
+
     const router = useRouter();
+
     const [isLoading, setIsLoading] = useState(false);
     const islogin = session?.status == "authenticated";
 
     const handleAdd2Cart = async () => {
+
         setIsLoading(true);
+        
         if (islogin) {
             const result = await handleCart(product._id);
             if (result.success) {
