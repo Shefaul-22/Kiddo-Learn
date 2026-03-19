@@ -13,6 +13,7 @@ const { dbConnect, collections } = require("@/lib/dbConnect");
 const orderCollection = dbConnect(collections.ORDER);
 
 export const createOrder = async (payload) => {
+
   const { user } = (await getServerSession(authOptions)) || {};
   if (!user) return { success: false };
 
@@ -45,7 +46,7 @@ export const createOrder = async (payload) => {
 
   await sendEmail({
     to: user.email,
-    subject: "🎉Your Order Invoice - Hero Kidz",
+    subject: "🎉Your Order Invoice - Kiddo Learn",
     html: orderInvoiceTemplate({
       orderId: result.insertedId.toString(),
       items: cart,
@@ -54,8 +55,8 @@ export const createOrder = async (payload) => {
   });
 
   await sendEmail({
-    to: "ferdouszihad.ph@gmail.com",
-    subject: "Congrates🔥. New Sell  from Hero Kidz",
+    to: "shefaul161341@gmail.com",
+    subject: "Congrates🔥. New Sell  from Kiddo Learn",
     html: adminOrderNotificationTemplate({
       orderId: result.insertedId.toString(),
       items: cart,

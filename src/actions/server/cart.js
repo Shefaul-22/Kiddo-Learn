@@ -13,7 +13,7 @@ const cartCollection = dbConnect(collections.CART);
 export const handleCart = async (productId) => {
 
   const { user } = (await getServerSession(authOptions)) || {};
-  
+
   if (!user) return { success: false };
 
   //getCartItem->user.email && productId
@@ -32,6 +32,7 @@ export const handleCart = async (productId) => {
 
     const result = await cartCollection.updateOne(query, updatedData);
     return { success: Boolean(result.modifiedCount) };
+    
   } else {
     const product = await dbConnect(collections.PRODUCTS).findOne({
       _id: new ObjectId(productId),

@@ -5,6 +5,7 @@ import CartItem from "../carrds/CartItem";
 import Link from "next/link";
 
 const Cart = ({ cartItem = [] }) => {
+
   const [items, setItems] = useState(cartItem);
 
   const totalItems = useMemo(
@@ -18,10 +19,14 @@ const Cart = ({ cartItem = [] }) => {
   );
 
   const removeItem = (id) => {
+
     setItems((prevItems) => prevItems.filter((item) => item._id != id));
   };
 
+
+
   const updateQuantity = (id, q) => {
+
     setItems((prevItems) =>
       prevItems.map((item) =>
         item._id == id ? { ...item, quantity: q } : item
@@ -33,14 +38,15 @@ const Cart = ({ cartItem = [] }) => {
     <div className="flex gap-6 flex-col lg:flex-row">
       {/* LEFT : CART ITEMS */}
       <div className="flex-1 space-y-4">
-        {items.map((item) => (
-          <CartItem
-            key={item._id.toString()}
-            item={{ ...item, _id: item._id.toString() }}
-            removeItem={removeItem}
-            updateQuantity={updateQuantity}
-          />
-        ))}
+        {
+          items.map((item) => (
+            <CartItem
+              key={item._id.toString()}
+              item={{ ...item, _id: item._id.toString() }}
+              removeItem={removeItem}
+              updateQuantity={updateQuantity}
+            />
+          ))}
       </div>
 
       {/* RIGHT : SUMMARY CARD */}
@@ -49,20 +55,21 @@ const Cart = ({ cartItem = [] }) => {
           <h2 className="text-xl font-bold mb-4">Order Summary</h2>
 
           <div className="space-y-2 text-sm">
-            {items.map((item) => (
-              <div
-                key={item._id}
-                className="flex justify-between border-b pb-1"
-              >
-                <div>
-                  <p className="font-medium">{item.title}</p>
-                  <p className="text-xs text-gray-500">
-                    Qty: {item.quantity} × ৳{item.price}
-                  </p>
+            {
+              items.map((item) => (
+                <div
+                  key={item._id}
+                  className="flex justify-between border-b pb-1"
+                >
+                  <div>
+                    <p className="font-medium">{item.title}</p>
+                    <p className="text-xs text-gray-500">
+                      Qty: {item.quantity} × ৳{item.price}
+                    </p>
+                  </div>
+                  <p className="font-semibold">৳{item.price * item.quantity}</p>
                 </div>
-                <p className="font-semibold">৳{item.price * item.quantity}</p>
-              </div>
-            ))}
+              ))}
           </div>
 
           <div className="divider"></div>

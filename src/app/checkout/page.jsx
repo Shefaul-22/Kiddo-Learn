@@ -1,14 +1,11 @@
 import { getCart } from "@/actions/server/cart";
-import CartItem from "@/components/carrds/CartItem";
-import Cart from "@/components/home/Cart";
-import { TbHorseToy } from "react-icons/tb";
+import CheckOut from "@/components/home/CheckOut";
 import React from "react";
-import { FaShopify } from "react-icons/fa";
 import { fontBangla } from "../layout";
+import { TbHorseToy } from "react-icons/tb";
 import Link from "next/link";
 
-const CartPage = async () => {
-
+const checkOutPage = async () => {
 
   const cartItems = await getCart();
   const formattedItems = cartItems.map((item) => ({
@@ -21,7 +18,7 @@ const CartPage = async () => {
       {/* title  */}
       <div className="">
         <h2 className="text-4xl py-4 font-bold border-l-8 border-primary pl-8">
-          My Cart
+          Check Out Page
         </h2>
       </div>
       {
@@ -29,7 +26,7 @@ const CartPage = async () => {
           <>
             <div className="text-center py-20 space-y-5">
               <h2 className={`${fontBangla.className} text-4xl font-bold`}>
-                আপনি কার্টে কোন প্রোডাক্ট এড করেন নি
+                আপনি কোন প্রোডাক্ট সিলেক্ট করেন নি
               </h2>
               <Link
                 href={"/products"}
@@ -40,10 +37,10 @@ const CartPage = async () => {
             </div>
           </>
         ) : (
-          <Cart cartItem={formattedItems}></Cart>
+          <CheckOut cartItems={formattedItems}></CheckOut>
         )}
     </div>
   );
 };
 
-export default CartPage;
+export default checkOutPage;

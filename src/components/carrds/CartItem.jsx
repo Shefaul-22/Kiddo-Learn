@@ -11,6 +11,7 @@ import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const CartItem = ({ item, removeItem, updateQuantity }) => {
+  
   const { title, image, quantity, price, _id } = item;
 
   const [loading, setLoading] = useState(false);
