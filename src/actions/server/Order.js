@@ -21,6 +21,8 @@ export const createOrder = async (payload) => {
   if (cart.length == 0) {
     return { success: false };
   }
+
+  // Total sold calculate korar jonno update many functionality here
   //   const products = cart.map((item) => ({
   //     _id: new ObjectId(cart.productId),
   //     quantity: cart.quantiy,

@@ -32,7 +32,7 @@ export const handleCart = async (productId) => {
 
     const result = await cartCollection.updateOne(query, updatedData);
     return { success: Boolean(result.modifiedCount) };
-    
+
   } else {
     const product = await dbConnect(collections.PRODUCTS).findOne({
       _id: new ObjectId(productId),
@@ -54,6 +54,7 @@ export const handleCart = async (productId) => {
 };
 
 export const getCart = cache(async () => {
+  
   const { user } = (await getServerSession(authOptions)) || {};
   if (!user) return [];
   console.log("get cart called");
